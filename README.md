@@ -1,92 +1,164 @@
 ````markdown
 # 💼 Payroll Management System (COBOL)
 
-A terminal-based Payroll Management System built using **COBOL**. It helps organizations manage employee salaries, calculate taxes, track deductions, and generate monthly payroll reports.
+A terminal-based Payroll Management System built using **COBOL**, designed to help organizations manage employee records, calculate salaries, and generate payroll reports efficiently.
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Status](https://img.shields.io/badge/status-active-brightgreen)
+![Status](https://img.shields.io/badge/status-production--ready-brightgreen)
 ![Platform](https://img.shields.io/badge/platform-Terminal-blue)
 
 ---
 
 ## 📜 Table of Contents
+
 - [🚀 Features](#-features)
 - [📂 Project Structure](#-project-structure)
-- [📊 Salary Calculation Formula](#-salary-calculation-formula)
+- [🏗️ System Architecture](#-system-architecture)
+- [📊 Salary Calculation](#-salary-calculation)
 - [🔧 Requirements](#-requirements)
-- [⚙️ How to Run](#️-how-to-run)
+- [⚙️ Installation & Running](#️-installation--running)
+- [💻 Usage](#-usage)
 - [📸 Screenshots](#-screenshots)
-- [🗂️ Sample Data](#️-sample-data)
+- [🗂️ Sample Data](#-sample-data)
 - [✅ Future Enhancements](#-future-enhancements)
+- [🛠️ Troubleshooting](#-troubleshooting)
 - [📃 License](#-license)
+- [🙋‍♂️ Support](#-support)
 
 ---
 
 ## 🚀 Features
-✅ Add / Edit / Delete Employee Records  
-✅ Compute Salary with Overtime, Bonus, Deductions  
-✅ Apply Tax Rules (Fixed %)  
-✅ Generate Monthly Salary Reports  
-✅ Search Employee by ID  
-✅ Simple CLI-based Menu System  
+
+✅ Add, Edit, Delete, and Search Employee Records  
+✅ Calculate Salary with Overtime, Bonus, Deductions, and Tax  
+✅ Generate Monthly Reports & Salary Slips  
+✅ Secure Admin Login  
+✅ Export Data to CSV  
+✅ Configurable Tax & Overtime Rates  
+✅ Simple CLI-Based Navigation  
 
 ---
 
 ## 📂 Project Structure
 
-| File / Folder     | Description                               |
-|-------------------|-------------------------------------------|
-| `main.cbl`        | Main menu and routing logic               |
-| `employee.cbl`    | Add/Edit/Delete/Search employee records   |
-| `payroll.cbl`     | Salary calculation and payroll logic      |
-| `report.cbl`      | Report generation module                  |
-| `employee.dat`    | Flat file storing employee data           |
-| `payroll.dat`     | Flat file storing payroll data            |
-| `reports.txt`     | Final payroll report output               |
+| File / Folder         | Description                               |
+|------------------------|-------------------------------------------|
+| `main.cbl`             | Main menu and navigation logic            |
+| `employee.cbl`         | Employee CRUD operations                  |
+| `payroll.cbl`          | Salary calculation logic                  |
+| `report.cbl`           | Report generation & CSV export            |
+| `auth.cbl`             | Admin authentication module               |
+| `employee.dat`         | Flat file storing employee records        |
+| `payroll.dat`          | Flat file storing payroll transactions    |
+| `reports.txt`          | Output text report                        |
+| `employee_export.csv`  | Exported employee data (CSV)              |
+| `payroll_export.csv`   | Exported payroll data (CSV)               |
 
 ---
 
-## 📊 Salary Calculation Formula
+## 🏗️ System Architecture
+
+- **Main Menu** – CLI with menu-driven options  
+- **Authentication** – Validates admin access  
+- **Employee Module** – Add/Edit/Delete/Search  
+- **Payroll Module** – Salary computation logic  
+- **Reporting Module** – Generates `.txt` and `.csv` reports  
+- **File System** – Stores data using flat files  
+
+**Data Flow:**  
+`Admin Login → Manage Employees → Process Payroll → Generate Reports → Export Data`
+
+---
+
+## 📊 Salary Calculation
 
 ```text
-Gross Salary   = Base Salary + (Overtime Hours × 100) + Bonus  
+Gross Salary   = Base Salary + (Overtime Hours × Rate) + Bonus  
 Tax (10%)      = 0.10 × Gross Salary  
 Net Salary     = Gross Salary - Tax - Deductions
 ````
+
+**Default Settings:**
+
+* Base Work Month: 22 Days
+* Overtime Rate: `$100/hour`
+* Tax Rate: `10%`
+* Minimum Salary: `$30,000/year`
+* Max Overtime: `80 hours/month`
 
 ---
 
 ## 🔧 Requirements
 
+### Software
+
 * COBOL Compiler (GnuCOBOL recommended)
 * Terminal / Command Prompt
-* Any text editor (VS Code, Vim, Nano)
+* Text Editor (VS Code, Vim, Nano)
+
+### Hardware
+
+* 512MB RAM minimum
+* 50MB free disk space
 
 ---
 
-## ⚙️ How to Run
+## ⚙️ Installation & Running
 
-### 1️⃣ Compile the COBOL files:
+### 1️⃣ Install GnuCOBOL
+
+**Ubuntu/Debian**
 
 ```bash
-cobc -x -o payroll main.cbl employee.cbl payroll.cbl report.cbl
+sudo apt update
+sudo apt install gnucobol
 ```
 
-### 2️⃣ Run the Program:
+**macOS**
+
+```bash
+brew install gnu-cobol
+```
+
+**Windows**
+Download GnuCOBOL from [https://gnucobol.sourceforge.io/](https://gnucobol.sourceforge.io/)
+
+---
+
+### 2️⃣ Setup Files
+
+```bash
+mkdir payroll-system
+cd payroll-system
+touch employee.dat payroll.dat reports.txt
+```
+
+---
+
+### 3️⃣ Compile the COBOL Source
+
+```bash
+cobc -x -o payroll main.cbl employee.cbl payroll.cbl report.cbl auth.cbl
+```
+
+### 4️⃣ Run the Program
 
 ```bash
 ./payroll
 ```
 
-### 3️⃣ Navigate the CLI Menu:
-
-Use number keys to select options and follow prompts.
-
 ---
 
-## 📸 Screenshots
+## 💻 Usage
 
-> 📌 *Add your terminal screenshots here for better visual documentation.*
+### 🛡️ Login
+
+```text
+Username: admin  
+Password: payroll123
+```
+
+### 🧭 Menu Interface
 
 ```
 +-------------------------------------+
@@ -94,54 +166,117 @@ Use number keys to select options and follow prompts.
 +-------------------------------------+
 | 1. Manage Employees                |
 | 2. Compute Payroll                 |
-| 3. Generate Report                 |
+| 3. Generate Reports                |
 | 4. Exit                            |
 +-------------------------------------+
 Enter choice:
+```
+
+### 🧪 Sample Workflow
+
+**Add Employee**
+
+```
+ID: 10001  
+Name: John Smith  
+Dept: IT  
+Base Salary: 75000  
+```
+
+**Process Payroll**
+
+```
+Days Worked: 22  
+Overtime: 8  
+Bonus: 1000  
+Deductions: 200  
+```
+
+**Calculation**
+
+```
+Overtime Pay: 8 × $100 = $800  
+Gross: $76,800  
+Tax: $7,680  
+Net Salary: $68,920  
+```
+
+---
+
+## 📸 Screenshots
+
+> 📌 Add screenshots in the `/screenshots` folder and embed them here.
+
+```
+Payroll Report - December 2025
+ID: 10001 | Name: John Smith  
+Gross: $76,800.00 | Net: $68,920.00
 ```
 
 ---
 
 ## 🗂️ Sample Data
 
-### `employee.dat` Example:
+### `employee.dat`
 
 ```text
-E101,John Smith,Engineering,Manager,50000
-E102,Sarah Lee,Finance,Analyst,42000
+10001John Smith                  IT                  Software Engineer        75000.00
+10002Jane Doe                    HR                  HR Manager               68000.00
 ```
 
-### `payroll.dat` Example:
+### `payroll.dat`
 
 ```text
-E101,25,10,5000,1500,53000,5300,46200
+10001,22,8,1000,200,7680,76800,68920,12,2025
 ```
 
 ---
 
 ## ✅ Future Enhancements
 
-* 🔐 Admin Authentication
-* 📈 Graphical Report Output (CSV/HTML)
-* 🗃️ VSAM or Indexed File Support
-* 🌍 Web interface using COBOL <-> Web bridge
+* 🔐 Role-based Authentication
+* 📊 Graphical Report Output (CSV/HTML)
+* 🌍 Web Interface using COBOL-Web bridge
+* 🗃️ VSAM / Indexed File / SQL DB Integration
+* 🔁 Backup & Restore functionality
+* 🛡️ Better Input Validation & Logging
+
+---
+
+## 🛠️ Troubleshooting
+
+| Issue               | Fix                                                                   |
+| ------------------- | --------------------------------------------------------------------- |
+| ❌ Compilation Error | Check COBOL syntax and ensure `IDENTIFICATION`, `PROCEDURE` divisions |
+| 🗂️ File Error      | Ensure `.dat` files exist and have correct permissions                |
+| 🧮 Wrong Output     | Validate inputs and verify salary formula                             |
 
 ---
 
 ## 📃 License
 
-MIT License © 2025 \[Your Name]
+This project is licensed under the **MIT License** © 2025 **JAGADISH SUNIL PEDNEKAR**.
 
 ---
 
 ## 🙋‍♂️ Support
 
-If you like this project, feel free to ⭐ it and share.
-For issues or suggestions, open an [Issue](https://github.com/your-repo/issues).
+If you like this project, give it a ⭐ at [Payroll\_Management\_System](https://github.com/JAGADISHSUNILPEDNEKAR/Payroll_Management_System).
+For issues or suggestions, open an [Issue](https://github.com/JAGADISHSUNILPEDNEKAR/Payroll_Management_System/issues).
+
+---
+
+📅 **Last Updated:** June 2025
+📦 **Version:** 1.0
+🚀 **Status:** Production Ready
 
 ```
 
 ---
 
-Let me know if you'd like me to help you customize this for your GitHub repository, including uploading screenshots, sample `.dat` files, or creating a `LICENSE` file!
+Would you like me to generate:
+- A matching `LICENSE` file with your name and year?
+- `.gitignore`, `CONTRIBUTING.md`, or `ISSUE_TEMPLATE.md` to go along with this?
+
+Let me know!
 ```
