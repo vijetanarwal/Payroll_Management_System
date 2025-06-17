@@ -272,11 +272,3 @@ For issues or suggestions, open an [Issue](https://github.com/JAGADISHSUNILPEDNE
 
 ```
 
----
-
-Would you like me to generate:
-- A matching `LICENSE` file with your name and year?
-- `.gitignore`, `CONTRIBUTING.md`, or `ISSUE_TEMPLATE.md` to go along with this?
-
-Let me know!
-```

@@ -1,3 +1,13 @@
-*.csv
-*.exe
+# COBOL build outputs
 *.o
+*.exe
+
+# Data export files
+*.csv
+
+# System-specific
+.DS_Store
+Thumbs.db
+
+# VSCode config 
+.vscode/
