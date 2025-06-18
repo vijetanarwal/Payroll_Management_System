@@ -1,0 +1,2 @@
+Payroll Report - December 2025
+ID: 10001, Name: John Smith, Gross: 76800.00, Net: 68920.00
