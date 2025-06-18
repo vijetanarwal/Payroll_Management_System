@@ -1,4 +1,3 @@
-````markdown
 # 💼 Payroll Management System (COBOL)
 
 A terminal-based Payroll Management System built using **COBOL**, designed to help organizations manage employee records, calculate salaries, and generate payroll reports efficiently.
@@ -72,11 +71,10 @@ A terminal-based Payroll Management System built using **COBOL**, designed to he
 
 ## 📊 Salary Calculation
 
-```text
+
 Gross Salary   = Base Salary + (Overtime Hours × Rate) + Bonus  
 Tax (10%)      = 0.10 × Gross Salary  
 Net Salary     = Gross Salary - Tax - Deductions
-````
 
 **Default Settings:**
 
@@ -272,5 +270,5 @@ For issues or suggestions, open an [Issue](https://github.com/JAGADISHSUNILPEDNE
 📦 **Version:** 1.0
 🚀 **Status:** Production Ready
 
-```
+
 
