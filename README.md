@@ -205,7 +205,9 @@ Net Salary: $68,920
 
 ## 📸 Screenshots
 
-> 📌 Add screenshots in the `/screenshots` folder and embed them here.
+<img width="1121" alt="Screenshot 2025-06-18 at 1 56 12 PM" src="https://github.com/user-attachments/assets/fdc9414c-1a54-47bc-9d1f-7d787bfbd786" />
+<img width="1121" alt="Screenshot 2025-06-18 at 1 56 26 PM" src="https://github.com/user-attachments/assets/27676b4e-4148-45fa-93bc-4d1e00fb9418" />
+
 
 ```
 Payroll Report - December 2025
