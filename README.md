@@ -67,25 +67,23 @@ A terminal-based Payroll Management System built using **COBOL**, designed to he
 **Note:** All functionality is in one COBOL program, not separate files.
 
 **Data Flow:**  
-Admin Login → Main Menu → Select Operation → Process Request → Update Files → Display Results
+`Admin Login → Main Menu → Select Operation → Process Request → Update Files → Display Results`
 
 ---
 
 ## 📊 Salary Calculation
 
-```
 Gross Salary   = Base Salary + (Overtime Hours × Rate) + Bonus  
 Tax (10%)      = 0.10 × Gross Salary  
 Net Salary     = Gross Salary - Tax - Deductions
-```
 
 **Default Settings:**
 
 * Base Work Month: 22 Days
-* Overtime Rate: $100/hour
-* Tax Rate: 10%
-* Minimum Salary: $30,000/year
-* Max Overtime: 80 hours/month
+* Overtime Rate: `$100/hour`
+* Tax Rate: `10%`
+* Minimum Salary: `$30,000/year`
+* Max Overtime: `80 hours/month`
 
 ---
 
@@ -303,7 +301,7 @@ scripts\install.bat
 
 The automated installation script will:
 - ✅ Check for GnuCOBOL installation (and attempt to install if missing)
-- ✅ Create necessary directories (scripts/, data/)
+- ✅ Create necessary directories (`scripts/`, `data/`)
 - ✅ Set up data files with sample employee data
 - ✅ Compile the COBOL program
 - ✅ Set proper file permissions
@@ -506,7 +504,7 @@ chmod +x scripts/install.sh
    ```
 
 2. **Common issues:**
-   - Missing periods (.) at end of statements
+   - Missing periods (`.`) at end of statements
    - Incorrect column alignment (COBOL is column-sensitive)
    - Reserved word conflicts
 
@@ -588,8 +586,8 @@ chmod +x scripts/install.sh
 
 **Solutions:**
 1. **Default credentials:**
-   - Username: admin
-   - Password: payroll123
+   - Username: `admin`
+   - Password: `payroll123`
 
 2. **Check for extra spaces:** Ensure no trailing spaces when typing
 
@@ -684,8 +682,8 @@ dos2unix -k payroll.cbl
 
 **Solutions:**
 1. **Force quit:**
-   - Linux/macOS: Ctrl+C
-   - Windows: Ctrl+Break
+   - Linux/macOS: `Ctrl+C`
+   - Windows: `Ctrl+Break`
 
 2. **Check for input prompts:** Ensure all ACCEPT statements work correctly
 
@@ -1004,8 +1002,8 @@ ls -la *.dat
 
 | Issue               | Fix                                                                   |
 | ------------------- | --------------------------------------------------------------------- |
-| ❌ Compilation Error | Check COBOL syntax and ensure IDENTIFICATION, PROCEDURE divisions |
-| 🗂 File Error      | Ensure .dat files exist and have correct permissions                |
+| ❌ Compilation Error | Check COBOL syntax and ensure `IDENTIFICATION`, `PROCEDURE` divisions |
+| 🗂 File Error      | Ensure `.dat` files exist and have correct permissions                |
 | 🧮 Wrong Output     | Validate inputs and verify salary formula                             |
 
 ---
