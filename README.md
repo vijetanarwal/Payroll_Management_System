@@ -1019,7 +1019,7 @@ This project is licensed under the **MIT License** © 2025 **JAGADISH SUNIL PEDN
 ## 🙋‍♂ Support
 
 If you like this project, give it a ⭐ at [Payroll\_Management\_System](https://github.com/JAGADISHSUNILPEDNEKAR/Payroll_Management_System).
-For issues or suggestions, open an [Issue](https://github.com/JAGADISHSUNILPEDNEKAR/issues).
+For issues or suggestions, open an [Issue](https://github.com/JAGADISHSUNILPEDNEKAR/Payroll_Management_System/issues).
 
 ---
 
