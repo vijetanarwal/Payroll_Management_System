@@ -158,7 +158,7 @@ Password: payroll123
 
 ### 🧭 Menu Interface
 
-```
+```text
 +-------------------------------------+
 |        PAYROLL MAIN MENU           |
 +-------------------------------------+
@@ -174,7 +174,7 @@ Enter choice:
 
 **Add Employee**
 
-```
+```text
 ID: 10001  
 Name: John Smith  
 Dept: IT  
@@ -183,7 +183,7 @@ Base Salary: 75000
 
 **Process Payroll**
 
-```
+```text
 Days Worked: 22  
 Overtime: 8  
 Bonus: 1000  
@@ -192,7 +192,7 @@ Deductions: 200
 
 **Calculation**
 
-```
+```text
 Overtime Pay: 8 × $100 = $800  
 Gross: $76,800  
 Tax: $7,680  
@@ -206,8 +206,7 @@ Net Salary: $68,920
 <img width="1121" alt="Screenshot 2025-06-18 at 1 56 12 PM" src="https://github.com/user-attachments/assets/fdc9414c-1a54-47bc-9d1f-7d787bfbd786" />
 <img width="1121" alt="Screenshot 2025-06-18 at 1 56 26 PM" src="https://github.com/user-attachments/assets/27676b4e-4148-45fa-93bc-4d1e00fb9418" />
 
-
-```
+```text
 Payroll Report - December 2025
 ID: 10001 | Name: John Smith  
 Gross: $76,800.00 | Net: $68,920.00
