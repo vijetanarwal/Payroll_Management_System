@@ -1,6 +1,6 @@
 # 💼 Payroll Management System (COBOL)
 
-A terminal-based Payroll Management System built using *COBOL*, designed to help organizations manage employee records, calculate salaries, and generate payroll reports efficiently.
+A terminal-based Payroll Management System built using **COBOL**, designed to help organizations manage employee records, calculate salaries, and generate payroll reports efficiently.
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Status](https://img.shields.io/badge/status-production--ready-brightgreen)
@@ -12,13 +12,13 @@ A terminal-based Payroll Management System built using *COBOL*, designed to help
 
 - [🚀 Features](#-features)
 - [📂 Project Structure](#-project-structure)
-- [🏗 System Architecture](#-system-architecture)
+- [🏗️ System Architecture](#️-system-architecture)
 - [📊 Salary Calculation](#-salary-calculation)
 - [🔧 Requirements](#-requirements)
 - [⚙ Installation & Running](#-installation--running)
 - [💻 Usage](#-usage)
 - [📸 Screenshots](#-screenshots)
-- [🗂 Sample Data](#-sample-data)
+- [🗂️ Sample Data](#️-sample-data)
 - [✅ Future Enhancements](#-future-enhancements)
 - [🛠 Troubleshooting](#-troubleshooting)
 - [📃 License](#-license)
@@ -52,33 +52,34 @@ A terminal-based Payroll Management System built using *COBOL*, designed to help
 
 ---
 
-## 🏗 System Architecture
+## 🏗️ System Architecture
 
-*Implementation:* Single COBOL file (payroll.cbl) with integrated modules
+**Implementation:** Single COBOL file (payroll.cbl) with integrated modules
 
-*Module Structure:*
-- *Main Menu* – CLI with menu-driven options  
-- *Authentication* – Validates admin access  
-- *Employee Module* – Add/Edit/Delete/Search  
-- *Payroll Module* – Salary computation logic  
-- *Reporting Module* – Generates .txt and .csv reports  
-- *File System* – Stores data using flat files  
+**Module Structure:**
+- **Main Menu** – CLI with menu-driven options  
+- **Authentication** – Validates admin access  
+- **Employee Module** – Add/Edit/Delete/Search  
+- **Payroll Module** – Salary computation logic  
+- **Reporting Module** – Generates .txt and .csv reports  
+- **File System** – Stores data using flat files  
 
-*Note:* All functionality is in one COBOL program, not separate files.
+**Note:** All functionality is in one COBOL program, not separate files.
 
-*Data Flow:*  
+**Data Flow:**  
 Admin Login → Main Menu → Select Operation → Process Request → Update Files → Display Results
 
 ---
 
 ## 📊 Salary Calculation
 
-
+```
 Gross Salary   = Base Salary + (Overtime Hours × Rate) + Bonus  
 Tax (10%)      = 0.10 × Gross Salary  
 Net Salary     = Gross Salary - Tax - Deductions
+```
 
-*Default Settings:*
+**Default Settings:**
 
 * Base Work Month: 22 Days
 * Overtime Rate: $100/hour
@@ -108,7 +109,7 @@ Net Salary     = Gross Salary - Tax - Deductions
 
 ### 0️⃣ Clone the Repository (REQUIRED FIRST STEP)
 
-bash
+```bash
 # Clone the repository
 git clone https://github.com/JAGADISHSUNILPEDNEKAR/Payroll_Management_System.git
 
@@ -117,31 +118,31 @@ cd Payroll_Management_System
 
 # Verify you have the source code
 ls -la payroll.cbl
-
+```
 
 ### 1️⃣ Install GnuCOBOL
 
-*Ubuntu/Debian*
+**Ubuntu/Debian**
 
-bash
+```bash
 sudo apt update
 sudo apt install gnucobol
+```
 
+**macOS**
 
-*macOS*
-
-bash
+```bash
 brew install gnu-cobol
+```
 
-
-*Windows*
+**Windows**  
 Download GnuCOBOL from [https://gnucobol.sourceforge.io/](https://gnucobol.sourceforge.io/)
 
 ---
 
 ### 2️⃣ Setup Data Files
 
-bash
+```bash
 # Create data files if not present
 touch employee.dat payroll.dat reports.txt
 
@@ -151,39 +152,39 @@ cat > employee.dat << 'EOF'
 10002Jane Doe                    HR Department        HR Manager               68000.00
 10003Bob Johnson                 Finance Department   Financial Analyst        62000.00
 EOF
-
+```
 
 ---
 
 ### 3️⃣ Compile the COBOL Source
 
-bash
+```bash
 cobc -x -o payroll payroll.cbl
+```
 
-
-*Note:* You may see a warning about _FORTIFY_SOURCE - this is normal and can be ignored.
+**Note:** You may see a warning about _FORTIFY_SOURCE - this is normal and can be ignored.
 
 For debugging mode:
-bash
+```bash
 cobc -x -g -o payroll payroll.cbl
-
+```
 
 To check syntax only:
-bash
+```bash
 cobc -fsyntax-only payroll.cbl
-
+```
 
 ### 4️⃣ Run the Program
 
-*Linux/macOS:*
-bash
+**Linux/macOS:**
+```bash
 ./payroll
+```
 
-
-*Windows:*
-cmd
+**Windows:**
+```cmd
 payroll.exe
-
+```
 
 ---
 
@@ -191,14 +192,14 @@ payroll.exe
 
 ### 🛡 Login
 
-text
+```
 Username: admin  
 Password: payroll123
-
+```
 
 ### 🧭 Menu Interface
 
-
+```
 +-------------------------------------+
 |        PAYROLL MAIN MENU           |
 +-------------------------------------+
@@ -208,36 +209,36 @@ Password: payroll123
 | 4. Exit                            |
 +-------------------------------------+
 Enter choice:
-
+```
 
 ### 🧪 Sample Workflow
 
-*Add Employee*
+**Add Employee**
 
-
+```
 ID: 10001  
 Name: John Smith  
 Dept: IT  
 Base Salary: 75000  
+```
 
+**Process Payroll**
 
-*Process Payroll*
-
-
+```
 Days Worked: 22  
 Overtime: 8  
 Bonus: 1000  
 Deductions: 200  
+```
 
+**Calculation**
 
-*Calculation*
-
-
+```
 Overtime Pay: 8 × $100 = $800  
 Gross: $76,800  
 Tax: $7,680  
 Net Salary: $68,920  
-
+```
 
 ---
 
@@ -246,29 +247,28 @@ Net Salary: $68,920
 <img width="1121" alt="Screenshot 2025-06-18 at 1 56 12 PM" src="https://github.com/user-attachments/assets/fdc9414c-1a54-47bc-9d1f-7d787bfbd786" />
 <img width="1121" alt="Screenshot 2025-06-18 at 1 56 26 PM" src="https://github.com/user-attachments/assets/27676b4e-4148-45fa-93bc-4d1e00fb9418" />
 
-
-
+```
 Payroll Report - December 2025
 ID: 10001 | Name: John Smith  
 Gross: $76,800.00 | Net: $68,920.00
-
+```
 
 ---
 
-## 🗂 Sample Data
+## 🗂️ Sample Data
 
 ### employee.dat
 
-text
+```
 10001John Smith                  IT                  Software Engineer        75000.00
 10002Jane Doe                    HR                  HR Manager               68000.00
-
+```
 
 ### payroll.dat
 
-text
+```
 10001,22,8,1000,200,7680,76800,68920,12,2025
-
+```
 
 ---
 
@@ -277,7 +277,7 @@ text
 ### 🚀 Automated Installation (Recommended)
 
 #### Linux/macOS
-bash
+```bash
 # Clone the repository
 git clone https://github.com/JAGADISHSUNILPEDNEKAR/Payroll_Management_System.git
 cd Payroll_Management_System
@@ -287,17 +287,17 @@ chmod +x scripts/install.sh
 
 # Run installation
 ./scripts/install.sh
-
+```
 
 #### Windows
-cmd
+```cmd
 REM Clone the repository
 git clone https://github.com/JAGADISHSUNILPEDNEKAR/Payroll_Management_System.git
 cd Payroll_Management_System
 
 REM Run installation
 scripts\install.bat
-
+```
 
 ### 📋 What the Installation Script Does
 
@@ -313,13 +313,13 @@ The automated installation script will:
 
 After running the installation script, verify everything is working:
 
-bash
+```bash
 # Linux/macOS
 ./scripts/setup_test.sh
 
 # Windows
 scripts\setup_test.bat
-
+```
 
 This will run comprehensive tests to ensure:
 - GnuCOBOL is properly installed
@@ -336,41 +336,41 @@ If you prefer to install manually or the automated script doesn't work:
 
 ### 1️⃣ Clone the Repository
 
-bash
+```bash
 # Clone from GitHub
 git clone https://github.com/JAGADISHSUNILPEDNEKAR/Payroll_Management_System.git
 cd Payroll_Management_System
-
+```
 
 ### 2️⃣ Install GnuCOBOL
 
-*Ubuntu/Debian*
-bash
+**Ubuntu/Debian**
+```bash
 sudo apt update
 sudo apt install gnucobol
+```
 
-
-*macOS*
-bash
+**macOS**
+```bash
 brew install gnu-cobol
+```
 
-
-*Windows*
+**Windows**
 - Download from [https://gnucobol.sourceforge.io/](https://gnucobol.sourceforge.io/)
 - Or use Windows Package Manager:
-  cmd
+  ```cmd
   winget install GnuCOBOL
-  
+  ```
 - Add GnuCOBOL to your system PATH
 
-*Fedora/RHEL*
-bash
+**Fedora/RHEL**
+```bash
 sudo yum install gnucobol
-
+```
 
 ### 3️⃣ Setup Data Files
 
-bash
+```bash
 # Create data files if needed
 touch employee.dat payroll.dat reports.txt
 
@@ -382,37 +382,37 @@ cat > employee.dat << 'EOF'
 10004Alice Brown                 IT Department        Senior Developer         85000.00
 10005Charlie Wilson              Marketing Department Marketing Manager        71000.00
 EOF
-
+```
 
 ### 4️⃣ Compile the COBOL Source
 
-bash
+```bash
 cobc -x -o payroll payroll.cbl
+```
 
-
-*Note:* You may see a warning about _FORTIFY_SOURCE - this is normal and can be ignored.
+**Note:** You may see a warning about _FORTIFY_SOURCE - this is normal and can be ignored.
 
 For debugging mode:
-bash
+```bash
 cobc -x -g -o payroll payroll.cbl
-
+```
 
 To check syntax only:
-bash
+```bash
 cobc -fsyntax-only payroll.cbl
-
+```
 
 ### 5️⃣ Run the Program
 
-*Linux/macOS:*
-bash
+**Linux/macOS:**
+```bash
 ./payroll
+```
 
-
-*Windows:*
-cmd
+**Windows:**
+```cmd
 payroll.exe
-
+```
 
 ---
 
@@ -422,74 +422,74 @@ payroll.exe
 
 #### ❌ "cobc: payroll.cbl: No such file or directory"
 
-*Problem:* Source code file not found. This usually means the repository wasn't cloned.
+**Problem:** Source code file not found. This usually means the repository wasn't cloned.
 
-*Solutions:*
+**Solutions:**
 
-1. *Verify you cloned the repository:*
-   bash
+1. **Verify you cloned the repository:**
+   ```bash
    ls -la payroll.cbl
-   
+   ```
    If file doesn't exist, you didn't clone the repo.
 
-2. *Clone the repository:*
-   bash
+2. **Clone the repository:**
+   ```bash
    cd ~
    git clone https://github.com/JAGADISHSUNILPEDNEKAR/Payroll_Management_System.git
    cd Payroll_Management_System
    ls -la payroll.cbl  # Should show the file now
-   
+   ```
 
-3. *Check you're in correct directory:*
-   bash
+3. **Check you're in correct directory:**
+   ```bash
    pwd
    # Should show: .../Payroll_Management_System
-   
+   ```
 
-4. *Compile again:*
-   bash
+4. **Compile again:**
+   ```bash
    cobc -x -o payroll payroll.cbl
-   
+   ```
 
 #### ❌ "cobc: command not found" or "GnuCOBOL not found"
 
-*Problem:* GnuCOBOL compiler is not installed or not in PATH.
+**Problem:** GnuCOBOL compiler is not installed or not in PATH.
 
-*Solutions:*
-1. *Install GnuCOBOL:*
-   - Linux: sudo apt install gnucobol
-   - macOS: brew install gnu-cobol
+**Solutions:**
+1. **Install GnuCOBOL:**
+   - Linux: `sudo apt install gnucobol`
+   - macOS: `brew install gnu-cobol`
    - Windows: Download from [gnucobol.sourceforge.io](https://gnucobol.sourceforge.io/)
 
-2. *Check PATH (Windows):*
-   cmd
+2. **Check PATH (Windows):**
+   ```cmd
    echo %PATH%
-   
+   ```
    Add GnuCOBOL installation directory to PATH if missing.
 
-3. *Verify installation:*
-   bash
+3. **Verify installation:**
+   ```bash
    cobc --version
-   
+   ```
 
 #### ❌ "Permission denied" when running install.sh
 
-*Problem:* Script doesn't have execute permissions.
+**Problem:** Script doesn't have execute permissions.
 
-*Solution:*
-bash
+**Solution:**
+```bash
 chmod +x scripts/install.sh
 ./scripts/install.sh
-
+```
 
 #### ❌ "Homebrew not found" on macOS
 
-*Problem:* Homebrew package manager is not installed.
+**Problem:** Homebrew package manager is not installed.
 
-*Solution:*
-bash
+**Solution:**
+```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
+```
 
 ---
 
@@ -497,43 +497,43 @@ bash
 
 #### ❌ Compilation fails with syntax errors
 
-*Problem:* COBOL source file has errors or incompatible syntax.
+**Problem:** COBOL source file has errors or incompatible syntax.
 
-*Solutions:*
-1. *Check syntax only:*
-   bash
+**Solutions:**
+1. **Check syntax only:**
+   ```bash
    cobc -fsyntax-only payroll.cbl
-   
+   ```
 
-2. *Common issues:*
+2. **Common issues:**
    - Missing periods (.) at end of statements
    - Incorrect column alignment (COBOL is column-sensitive)
    - Reserved word conflicts
 
-3. *Verify file encoding:* Should be UTF-8 or ASCII
-   bash
+3. **Verify file encoding:** Should be UTF-8 or ASCII
+   ```bash
    file payroll.cbl
-   
+   ```
 
 #### ❌ "error: EMPLOYEE-FILE: File name too long"
 
-*Problem:* File path exceeds system limits.
+**Problem:** File path exceeds system limits.
 
-*Solution:* Move project to a directory with a shorter path.
+**Solution:** Move project to a directory with a shorter path.
 
 #### ❌ Linker errors during compilation
 
-*Problem:* Missing system libraries.
+**Problem:** Missing system libraries.
 
-*Solutions:*
-- *Linux:* Install development tools
-  bash
+**Solutions:**
+- **Linux:** Install development tools
+  ```bash
   sudo apt install build-essential
-  
-- *macOS:* Install Xcode Command Line Tools
-  bash
+  ```
+- **macOS:** Install Xcode Command Line Tools
+  ```bash
   xcode-select --install
-  
+  ```
 
 ---
 
@@ -541,76 +541,76 @@ bash
 
 #### ❌ "File not found: employee.dat"
 
-*Problem:* Data file doesn't exist or program can't access it.
+**Problem:** Data file doesn't exist or program can't access it.
 
-*Solutions:*
-1. *Create the file:*
-   bash
+**Solutions:**
+1. **Create the file:**
+   ```bash
    touch employee.dat
-   
+   ```
 
-2. *Check current directory:*
-   bash
+2. **Check current directory:**
+   ```bash
    ls -la *.dat
-   
+   ```
 
-3. *Run from correct directory:* Ensure you're in the project root
-   bash
+3. **Run from correct directory:** Ensure you're in the project root
+   ```bash
    pwd
-   
+   ```
 
 #### ❌ "File status 35" or I/O errors
 
-*Problem:* File permissions or corruption issues.
+**Problem:** File permissions or corruption issues.
 
-*Solutions:*
-1. *Check permissions:*
-   bash
+**Solutions:**
+1. **Check permissions:**
+   ```bash
    ls -l *.dat
    chmod 644 employee.dat payroll.dat
-   
+   ```
 
-2. *Verify file format:* Ensure no binary characters in text files
-   bash
+2. **Verify file format:** Ensure no binary characters in text files
+   ```bash
    file employee.dat
    cat -v employee.dat
-   
+   ```
 
-3. *Recreate data files if corrupted:*
-   bash
+3. **Recreate data files if corrupted:**
+   ```bash
    mv employee.dat employee.dat.backup
    ./scripts/install.sh
-   
+   ```
 
 #### ❌ "Login Failed" even with correct credentials
 
-*Problem:* File format or encoding issues in authentication.
+**Problem:** File format or encoding issues in authentication.
 
-*Solutions:*
-1. *Default credentials:*
+**Solutions:**
+1. **Default credentials:**
    - Username: admin
    - Password: payroll123
 
-2. *Check for extra spaces:* Ensure no trailing spaces when typing
+2. **Check for extra spaces:** Ensure no trailing spaces when typing
 
-3. *Recompile the program:*
-   bash
+3. **Recompile the program:**
+   ```bash
    cobc -x -o payroll payroll.cbl
-   
+   ```
 
 #### ❌ "Invalid numeric data" or calculation errors
 
-*Problem:* Data file format doesn't match COBOL picture clauses.
+**Problem:** Data file format doesn't match COBOL picture clauses.
 
-*Solutions:*
-1. *Check data alignment:* Each field must be in correct position
-2. *Verify numeric fields:* Should contain only digits and decimal point
-3. *Use sample data template:*
-   
+**Solutions:**
+1. **Check data alignment:** Each field must be in correct position
+2. **Verify numeric fields:** Should contain only digits and decimal point
+3. **Use sample data template:**
+   ```
    10001John Smith                  IT Department        Software Engineer        75000.00
    ^    ^                           ^                    ^                        ^
    ID   Name (30 chars)             Dept (20 chars)      Position (25 chars)      Salary
-   
+   ```
 
 ---
 
@@ -618,43 +618,43 @@ bash
 
 #### 🐧 Linux Issues
 
-*Problem:* "error while loading shared libraries: libcob.so.4"
+**Problem:** "error while loading shared libraries: libcob.so.4"
 
-*Solution:*
-bash
+**Solution:**
+```bash
 sudo ldconfig
 # Or set LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
-
+```
 
 #### 🍎 macOS Issues
 
-*Problem:* "dyld: Library not loaded"
+**Problem:** "dyld: Library not loaded"
 
-*Solution:*
-bash
+**Solution:**
+```bash
 # Reinstall GnuCOBOL
 brew reinstall gnu-cobol
 
 # Or set DYLD_LIBRARY_PATH
 export DYLD_LIBRARY_PATH=/usr/local/lib:$DYLD_LIBRARY_PATH
-
+```
 
 #### 🪟 Windows Issues
 
-*Problem:* "The code execution cannot proceed because libcob-4.dll was not found"
+**Problem:** "The code execution cannot proceed because libcob-4.dll was not found"
 
-*Solutions:*
+**Solutions:**
 1. Reinstall GnuCOBOL
 2. Add GnuCOBOL bin directory to PATH
 3. Copy required DLLs to program directory
 
-*Problem:* Line endings causing issues
+**Problem:** Line endings causing issues
 
-*Solution:* Convert line endings to CRLF
-cmd
+**Solution:** Convert line endings to CRLF
+```cmd
 dos2unix -k payroll.cbl
-
+```
 
 ---
 
@@ -662,37 +662,37 @@ dos2unix -k payroll.cbl
 
 #### ❌ Slow file operations
 
-*Problem:* Large data files or disk I/O bottleneck.
+**Problem:** Large data files or disk I/O bottleneck.
 
-*Solutions:*
-1. *Check file size:*
-   bash
+**Solutions:**
+1. **Check file size:**
+   ```bash
    du -h *.dat
-   
+   ```
 
-2. *Archive old payroll records:*
-   bash
+2. **Archive old payroll records:**
+   ```bash
    mv payroll.dat payroll_2024.dat
    touch payroll.dat
-   
+   ```
 
-3. *Use indexed files* (advanced): Modify file organization in COBOL
+3. **Use indexed files** (advanced): Modify file organization in COBOL
 
 #### ❌ Program hangs or freezes
 
-*Problem:* Infinite loop or waiting for input.
+**Problem:** Infinite loop or waiting for input.
 
-*Solutions:*
-1. *Force quit:*
+**Solutions:**
+1. **Force quit:**
    - Linux/macOS: Ctrl+C
    - Windows: Ctrl+Break
 
-2. *Check for input prompts:* Ensure all ACCEPT statements work correctly
+2. **Check for input prompts:** Ensure all ACCEPT statements work correctly
 
-3. *Add timeout to testing:*
-   bash
+3. **Add timeout to testing:**
+   ```bash
    timeout 10s ./payroll
-   
+   ```
 
 ---
 
@@ -700,41 +700,41 @@ dos2unix -k payroll.cbl
 
 #### ❌ Reports show incorrect calculations
 
-*Problem:* Tax rate or formula issues.
+**Problem:** Tax rate or formula issues.
 
-*Solutions:*
-1. *Verify constants:*
+**Solutions:**
+1. **Verify constants:**
    - Default tax rate: 10% (0.10)
    - Overtime rate: $100/hour
    - Working days: 22 days/month
 
-2. *Recalculate manually:*
-   
+2. **Recalculate manually:**
+   ```
    Gross = Base Salary + (OT Hours × $100) + Bonus
    Tax = Gross × 0.10
    Net = Gross - Tax - Deductions
-   
+   ```
 
-3. *Check data types:* Ensure numeric fields don't have text
+3. **Check data types:** Ensure numeric fields don't have text
 
 #### ❌ Employee data appears corrupted
 
-*Problem:* Records show garbled or incorrect data.
+**Problem:** Records show garbled or incorrect data.
 
-*Solutions:*
-1. *Backup current data:*
-   bash
+**Solutions:**
+1. **Backup current data:**
+   ```bash
    cp employee.dat employee.dat.backup
-   
+   ```
 
-2. *Check record format:* Each record must be exactly as defined
+2. **Check record format:** Each record must be exactly as defined
    - Employee ID: 5 digits
    - Name: 30 characters (padded with spaces)
    - Department: 20 characters
    - Position: 25 characters
    - Salary: 9 digits with 2 decimals
 
-3. *Manually fix or recreate:* Edit with care to maintain alignment
+3. **Manually fix or recreate:** Edit with care to maintain alignment
 
 ---
 
@@ -742,18 +742,18 @@ dos2unix -k payroll.cbl
 
 If you're still experiencing issues:
 
-1. *Check existing issues:* [GitHub Issues](https://github.com/JAGADISHSUNILPEDNEKAR/Payroll_Management_System/issues)
+1. **Check existing issues:** [GitHub Issues](https://github.com/JAGADISHSUNILPEDNEKAR/Payroll_Management_System/issues)
 
-2. *Create a new issue* with:
+2. **Create a new issue** with:
    - Operating system and version
-   - GnuCOBOL version (cobc --version)
+   - GnuCOBOL version (`cobc --version`)
    - Complete error message
    - Steps to reproduce
    - What you've already tried
 
-3. *Contact maintainer:* jsphere16@gmail.com
+3. **Contact maintainer:** jsphere16@gmail.com
 
-4. *Community resources:*
+4. **Community resources:**
    - [GnuCOBOL Documentation](https://gnucobol.sourceforge.io/doc/gnucobol.html)
    - [COBOL Programming Guide](https://www.ibm.com/docs/en/cobol-zos)
 
@@ -765,7 +765,7 @@ If you're still experiencing issues:
 
 If you want to install to a custom directory:
 
-bash
+```bash
 # Create custom directory
 mkdir -p /opt/payroll-system
 cd /opt/payroll-system
@@ -773,13 +773,13 @@ cd /opt/payroll-system
 # Clone and install
 git clone https://github.com/JAGADISHSUNILPEDNEKAR/Payroll_Management_System.git .
 ./scripts/install.sh
-
+```
 
 ### Environment Variables
 
 You can set these environment variables for customization:
 
-bash
+```bash
 # Linux/macOS
 export PAYROLL_DATA_DIR="/path/to/data"
 export PAYROLL_REPORTS_DIR="/path/to/reports"
@@ -787,13 +787,13 @@ export PAYROLL_REPORTS_DIR="/path/to/reports"
 # Windows
 set PAYROLL_DATA_DIR=C:\path\to\data
 set PAYROLL_REPORTS_DIR=C:\path\to\reports
-
+```
 
 ### Multiple Installations
 
 To run multiple instances:
 
-bash
+```bash
 # Instance 1
 mkdir payroll-dept1
 cd payroll-dept1
@@ -805,23 +805,23 @@ mkdir payroll-dept2
 cd payroll-dept2
 git clone https://github.com/JAGADISHSUNILPEDNEKAR/Payroll_Management_System.git .
 ./scripts/install.sh
-
+```
 
 ---
 
 ## 📊 System Requirements
 
 ### Minimum Requirements
-- *CPU:* Any x86/x64 processor (1 GHz+)
-- *RAM:* 512 MB
-- *Disk:* 50 MB free space
-- *OS:* Linux, macOS 10.12+, Windows 7+
+- **CPU:** Any x86/x64 processor (1 GHz+)
+- **RAM:** 512 MB
+- **Disk:** 50 MB free space
+- **OS:** Linux, macOS 10.12+, Windows 7+
 
 ### Recommended Requirements
-- *CPU:* Dual-core processor (2 GHz+)
-- *RAM:* 2 GB
-- *Disk:* 200 MB free space (for data growth)
-- *OS:* Linux (Ubuntu 20.04+), macOS 11+, Windows 10+
+- **CPU:** Dual-core processor (2 GHz+)
+- **RAM:** 2 GB
+- **Disk:** 200 MB free space (for data growth)
+- **OS:** Linux (Ubuntu 20.04+), macOS 11+, Windows 10+
 
 ### Tested Platforms
 - ✅ Ubuntu 20.04, 22.04, 24.04
@@ -837,7 +837,7 @@ git clone https://github.com/JAGADISHSUNILPEDNEKAR/Payroll_Management_System.git
 
 ### Pull Latest Changes
 
-bash
+```bash
 # Save your data files
 cp employee.dat employee.dat.backup
 cp payroll.dat payroll.dat.backup
@@ -851,7 +851,7 @@ cobc -x -o payroll payroll.cbl
 # Restore data if needed
 cp employee.dat.backup employee.dat
 cp payroll.dat.backup payroll.dat
-
+```
 
 ### Migration Between Versions
 
@@ -867,8 +867,8 @@ If data format changes between versions:
 
 ### Complete Removal
 
-*Linux/macOS:*
-bash
+**Linux/macOS:**
+```bash
 # Remove executable
 rm -f payroll
 
@@ -878,10 +878,10 @@ rm -f employee.dat payroll.dat reports.txt
 # Remove entire directory
 cd ..
 rm -rf Payroll_Management_System
+```
 
-
-*Windows:*
-cmd
+**Windows:**
+```cmd
 REM Remove executable
 del payroll.exe
 
@@ -891,11 +891,11 @@ del employee.dat payroll.dat reports.txt
 REM Remove directory
 cd ..
 rmdir /s /q Payroll_Management_System
-
+```
 
 ### Keep Data, Remove Program
 
-bash
+```bash
 # Backup data
 mkdir payroll-backup
 cp *.dat reports.txt payroll-backup/
@@ -903,14 +903,14 @@ cp *.dat reports.txt payroll-backup/
 # Remove program
 rm payroll
 rm payroll.cbl enhanced_modules.cbl
-
+```
 
 ---
 
 ## 📝 Quick Reference Commands
 
 ### Compilation
-bash
+```bash
 # Standard compilation
 cobc -x -o payroll payroll.cbl
 
@@ -922,10 +922,10 @@ cobc -fsyntax-only payroll.cbl
 
 # Verbose output
 cobc -x -v -o payroll payroll.cbl
-
+```
 
 ### File Management
-bash
+```bash
 # View employee data
 cat employee.dat
 
@@ -937,10 +937,10 @@ grep "10001" employee.dat
 
 # Backup all data
 tar -czf payroll-backup-$(date +%Y%m%d).tar.gz *.dat reports.txt
-
+```
 
 ### Testing
-bash
+```bash
 # Run verification
 ./scripts/setup_test.sh
 
@@ -949,29 +949,29 @@ file *.dat
 
 # Validate permissions
 ls -la *.dat
-
+```
 
 ---
 
 ## 🎯 Best Practices
 
 ### Data Management
-- *Regular backups:* Backup data files weekly
-- *Archive old records:* Move old payroll.dat entries to archive files
-- *Test on sample data:* Use test data before processing real payroll
-- *Validate inputs:* Always verify data before saving
+- **Regular backups:** Backup data files weekly
+- **Archive old records:** Move old payroll.dat entries to archive files
+- **Test on sample data:** Use test data before processing real payroll
+- **Validate inputs:** Always verify data before saving
 
 ### Security
-- *Change default password:* Modify WS-VALID-PASS in payroll.cbl
-- *Restrict file permissions:* chmod 600 for sensitive data
-- *Use separate user accounts:* Don't run as root/administrator
-- *Audit trail:* Keep logs of who accesses the system
+- **Change default password:** Modify WS-VALID-PASS in payroll.cbl
+- **Restrict file permissions:** `chmod 600` for sensitive data
+- **Use separate user accounts:** Don't run as root/administrator
+- **Audit trail:** Keep logs of who accesses the system
 
 ### Performance
-- *Keep data files reasonable size:* Archive after 1000+ records
-- *Index frequently searched fields:* Consider indexed file organization
-- *Regular maintenance:* Clean up temporary files
-- *Monitor disk space:* Ensure sufficient space for reports
+- **Keep data files reasonable size:** Archive after 1000+ records
+- **Index frequently searched fields:** Consider indexed file organization
+- **Regular maintenance:** Clean up temporary files
+- **Monitor disk space:** Ensure sufficient space for reports
 
 ---
 
@@ -987,6 +987,8 @@ ls -la *.dat
 - [COBOL Standards](https://www.iso.org/standard/74527.html)
 - [COBOL Tutorial](https://www.tutorialspoint.com/cobol/index.htm)
 
+---
+
 ## ✅ Future Enhancements
 
 * 🔐 Role-based Authentication
@@ -998,7 +1000,7 @@ ls -la *.dat
 
 ---
 
-## 🛠 Troubleshooting
+## 🛠 Common Issues Quick Reference
 
 | Issue               | Fix                                                                   |
 | ------------------- | --------------------------------------------------------------------- |
@@ -1010,7 +1012,7 @@ ls -la *.dat
 
 ## 📃 License
 
-This project is licensed under the *MIT License* © 2025 *JAGADISH SUNIL PEDNEKAR*.
+This project is licensed under the **MIT License** © 2025 **JAGADISH SUNIL PEDNEKAR**.
 
 ---
 
@@ -1021,6 +1023,6 @@ For issues or suggestions, open an [Issue](https://github.com/JAGADISHSUNILPEDNE
 
 ---
 
-📅 *Last Updated:* June 2025
-📦 *Version:* 1.0
-🚀 *Status:* Production Ready
+📅 **Last Updated:** June 2025  
+📦 **Version:** 1.0  
+🚀 **Status:** Production Ready
